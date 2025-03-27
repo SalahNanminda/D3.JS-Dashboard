@@ -64,6 +64,8 @@ https://dummyjson.com/products
 - 🏷 **Interactive Data Tooltip:** Displays detailed product information (**name, MOQ, and rating**) when hovering over each node in the chart.
 - 📡 **API Fetching:** Fetches data from the API
 
+---
+
 ## 📁 Project Structure
 
 /src/app  
@@ -76,6 +78,8 @@ https://dummyjson.com/products
 │ ├── Api.service.ts  
 ├── app-routing.module.ts  
 ├── app.module.ts
+
+---
 
 ## 🖼 Screenshots
 
