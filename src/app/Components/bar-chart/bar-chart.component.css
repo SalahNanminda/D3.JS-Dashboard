@@ -1,0 +1,96 @@
+.filter-section {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.chart-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.range-slider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.range-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #007bff;
+  outline: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.apply-btn {
+  background-color: #007bff; /* Blue color */
+  color: white; /* White text */
+  border: none;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px; /* Spacing from the last input */
+  display: block; /* Makes it take full width if needed */
+}
+
+.apply-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.apply-btn:active {
+  transform: scale(0.98); /* Slight press effect */
+}
+.header-section {
+  text-align: center;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #ddd;
+  /* margin-top: -15px; */
+}
+
+.header-section h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #333;
+}
+
+.header-section p {
+  font-size: 14px;
+  color: #555;
+  max-width: 600px;
+  margin: 5px auto;
+  line-height: 1.5;
+}

@@ -1,0 +1,161 @@
+.chart-container {
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+svg {
+  width: 700px;
+  height: 400px;
+}
+
+.line {
+  fill: none;
+  stroke-width: 2;
+}
+
+.dot {
+  stroke: #000;
+  stroke-width: 1px;
+}
+
+.mark {
+  fill: red;
+}
+.avg-dot {
+  fill: blue;
+  stroke: white;
+  stroke-width: 1.5;
+}
+.single-moq-mark {
+  fill: yellowgreen;
+  stroke: black;
+  stroke-width: 1.5;
+  cursor: pointer;
+}
+
+.dialog-box {
+  position: absolute;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  border: 1px solid black;
+}
+
+.dialog-box button {
+  margin-top: 5px;
+  padding: 5px 10px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.header-section {
+  text-align: center;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #ddd;
+}
+
+.header-section h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #333;
+}
+
+.header-section p {
+  font-size: 14px;
+  color: #555;
+  max-width: 600px;
+  margin: 5px auto;
+  line-height: 1.5;
+}
+.filter-section {
+  /* margin-bottom: 10px; */
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+#chart-containers {
+  width: 70%;
+}
+
+#legend-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: start; */
+  padding-left: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.legend-item svg {
+  width: 15px; /* Reduce width */
+  height: 15px; /* Reduce height */
+}
+.apply-btn {
+  background-color: #007bff; /* Blue color */
+  color: white; /* White text */
+  border: none;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px; /* Spacing from the last input */
+  display: block; /* Makes it take full width if needed */
+}
+
+.apply-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.apply-btn:active {
+  transform: scale(0.98); /* Slight press effect */
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full-screen loader */
+  /* position: absolute; */
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Light overlay effect */
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db; /* Blue color */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

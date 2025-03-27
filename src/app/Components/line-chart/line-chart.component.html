@@ -1,0 +1,54 @@
+<div class="header-section">
+    <h2>Product Ratings vs. MOQ & Discount Trends</h2>
+    <p>
+        This chart visualizes how <strong>product ratings fluctuate</strong> based on:
+        <br> 1️⃣ <strong>Minimum Order Quantity (MOQ)</strong> – Understanding the impact of bulk orders on customer
+        ratings.
+        <br> 2️⃣ <strong>Discount Percentage</strong> – Exploring how price reductions influence product ratings.
+    </p>
+</div>
+
+<div class="filter-section">
+    <label for="categoryFilter">Type</label>
+    <select id="categoryFilter" (change)="applyFilter($event)">
+        <option *ngFor="let category of Particulars" [value]="category.name">{{ category.name }}</option>
+    </select>
+
+    <button class="apply-btn" (click)="applyFilters()">Apply</button>
+</div>
+
+<div *ngIf="loading" class="loader-container">
+    <div class="loader"></div>
+    <!-- <p>Loading chart data...</p> -->
+</div>
+
+<div style="display: flex;">
+    <div *ngIf="!loading" class="chart-container">
+        <svg #chart></svg>
+        <div *ngIf="chartLoaded" id="legend-container">
+            <div class="legend-item">
+                <svg width="15" height="15">
+                    <path d="M2,7.5 L13,7.5 M7.5,2 L7.5,13" stroke="red" stroke-width="2"></path>
+                </svg>
+                <span> {{labels.crossLabel}}</span>
+            </div>
+            <div class="legend-item">
+                <svg width="15" height="15">
+                    <circle cx="7.5" cy="7.5" r="5" fill="yellowgreen"></circle>
+                </svg>
+                <span> {{labels.dotLabel}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="selectedProduct" class="dialog-box" [style.left.px]="dialogPosition.x" [style.top.px]="dialogPosition.y">
+
+    <strong>{{selectedProduct.isAvg ? 'Products':'Product'}}:</strong> {{selectedProduct.isAvg ? titleConcat
+    :selectedProduct.title}}<br>
+    <strong>{{selectedCategory === 'MOQ' ? 'MOQ' : 'Discount Percent'}}:</strong>
+    {{ selectedCategory === 'MOQ' ? selectedProduct.minimumOrderQuantity :
+    selectedProduct.discountPercentage}}<br>
+    <strong>{{selectedProduct.isAvg ? 'Average Rating':'Rating'}}:</strong> {{ selectedProduct.rating }}<br>
+
+</div>

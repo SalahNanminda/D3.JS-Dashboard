@@ -1,0 +1,34 @@
+<div class="header-section">
+    <h2>Stock Levels by Product and Category</h2>
+    <p>
+        This chart provides insights into <strong>stock availability</strong> by displaying:
+        <br> 1️⃣ <strong>Individual Products</strong> – The current stock levels for various products.
+        <br> 2️⃣ <strong>Categories</strong> – The total stock count for products grouped by category.
+        <br> 🛠️ Use the sorting feature to filter products based on <strong>minimum and maximum stock levels</strong>.
+    </p>
+</div>
+<div class="filter-section">
+    <label for="categoryFilter">Type</label>
+    <select id="categoryFilter" (change)="applyFilter($event)">
+        <option *ngFor="let category of Particulars" [value]="category.name">{{ category.name }}</option>
+    </select>
+    <!-- Stock Range Filter -->
+    <label for="stockRange">Stock Range:</label>
+    <div class="range-slider">
+        <div class="range-input">
+            <span>Min:{{ minStock }}</span>
+            <input type="range" id="stockRangeMin" [(ngModel)]="minStock" (input)="stockRangeChange(1)"
+                [attr.min]="minStockValue" [attr.max]="maxStockValue">
+        </div>
+        <div class="range-input">
+            <!-- <span>Max</span> -->
+            <span>Max:{{ maxStock }}</span>
+            <input type="range" id="stockRangeMax" [(ngModel)]="maxStock" (input)="stockRangeChange(2)"
+                [attr.min]="minStockValue" [attr.max]="maxStockValue">
+        </div>
+    </div>
+    <button class="apply-btn" (click)="applyFilters()">Apply</button>
+</div>
+<div class="chart-container" #chart></div>
+
+<div id="tooltip" style="position: absolute;background: lightgrey;padding: 5px;border-radius: 5px;display: none;"></div>
