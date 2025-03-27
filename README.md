@@ -61,7 +61,7 @@ https://dummyjson.com/products
 - 📊 **Bar Chart:** Visualizes stock levels by product and category.
 - 📈 **Line Chart:** Displays product ratings in relation to MOQ & discounts.
 - 🔍 **Interactive Filtering:** Filter products and categories based on a selected stock range.
-- 🏷 **Interactive Data Tooltip:** Displays detailed product information (**name, MOQ, and rating**) when hovering over each node in the chart.
+- 🏷 **Interactive Data Tooltip:** Displays detailed product information (**name, MOQ, and rating**) when hovering over each node in the Line chart.
 - 📡 **API Fetching:** Fetches data from the API
 
 ---
